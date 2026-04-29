@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Puzzles{% endblock %}
+{% block content %}
+<section class="card">
+    <h1>Puzzles</h1>
+    <p>Puzzle mode reuses the same engine but checks moves against a stored solution line.</p>
+    <button id="loadPuzzleButton">Load puzzle</button>
+    <pre id="puzzleOutput"></pre>
+</section>
+<script type="module" src="{{ url_for('static', filename='js/api.js') }}"></script>
+{% endblock %}

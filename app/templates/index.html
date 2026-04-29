@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Chess NEA - Home{% endblock %}
+{% block content %}
+<section class="card hero">
+    <h1>Chess NEA</h1>
+    <p>Manual chess engine, legal move validation, saved games and AI search.</p>
+    <form action="/game/new" method="post" class="row-form">
+        <select name="mode">
+            <option value="local">Local two-player</option>
+            <option value="ai">Play against AI</option>
+        </select>
+        <button type="submit">New game</button>
+    </form>
+</section>
+<section class="card">
+    <h2>Recent games</h2>
+    {% if games %}
+        <ul>
+            {% for game in games %}
+                <li><a href="/game/{{ game.id }}">Game {{ game.id }}</a> - {{ game.status }} - {{ game.startedAt }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No saved games yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

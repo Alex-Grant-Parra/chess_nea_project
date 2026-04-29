@@ -1,0 +1,8 @@
+{
+  "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -": [
+    {"move": "e2e4", "weight": 5},
+    {"move": "d2d4", "weight": 4},
+    {"move": "g1f3", "weight": 2},
+    {"move": "c2c4", "weight": 2}
+  ]
+}

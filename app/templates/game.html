@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Game {{ game.id }}{% endblock %}
+{% block content %}
+<section class="game-layout" data-game-id="{{ game.id }}">
+    <div class="board-panel card">
+        <div id="board" class="board"></div>
+    </div>
+    <aside class="side-panel card">
+        <h1>Game {{ game.id }}</h1>
+        <p id="statusText">Loading...</p>
+        <button id="flipBoardButton">Flip board</button>
+        <h2>Moves</h2>
+        <ol id="moveList"></ol>
+        <h2>FEN</h2>
+        <textarea id="fenBox" readonly></textarea>
+    </aside>
+</section>
+<script type="module" src="{{ url_for('static', filename='js/gameClient.js') }}"></script>
+{% endblock %}

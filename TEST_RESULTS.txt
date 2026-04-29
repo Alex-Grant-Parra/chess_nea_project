@@ -1,0 +1,10 @@
+Test run performed in the build environment using:
+python -m pytest tests -k "not Api" --tb=short -p no:cacheprovider --import-mode=importlib
+
+Result:
+13 passed, 1 skipped in 1.74s
+
+Notes:
+- The skipped test is the optional Flask API test because Flask/Flask-SQLAlchemy were not installed in the build environment.
+- Flask and Flask-SQLAlchemy are listed in requirements.txt, so the API tests should run once dependencies are installed locally.
+- Engine tests covered FEN round-tripping, legal move generation, start position perft, Kiwipete perft, special moves, checkmate/stalemate/draw detection, and AI move selection.

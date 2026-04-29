@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Analysis{% endblock %}
+{% block content %}
+<section class="card">
+    <h1>Analysis</h1>
+    <p>Paste a FEN and ask the custom engine to search it.</p>
+    <textarea id="analysisFen" rows="3">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</textarea>
+    <div class="row-form">
+        <input id="analysisDepth" type="number" min="1" max="6" value="4">
+        <input id="analysisTime" type="number" min="0.1" step="0.1" value="1.0">
+        <button id="analyseButton">Analyse</button>
+    </div>
+    <pre id="analysisOutput"></pre>
+</section>
+<script type="module" src="{{ url_for('static', filename='js/analysisClient.js') }}"></script>
+{% endblock %}
